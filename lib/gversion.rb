@@ -1,4 +1,4 @@
-class Version
+class Gversion
   include Comparable
 
   PATTERN = /^(?<major>0|[0-9][0-9]*)(\.(?<minor>0|[0-9][0-9]*))?(\.(?<revision>0|[0-9][0-9]*))?$/
@@ -16,7 +16,7 @@ class Version
     match = PATTERN.match(string)
     return nil unless match
 
-    Version[match[:major], match[:minor], match[:revision]]
+    self[match[:major], match[:minor], match[:revision]]
   end
 
   def self.[](*array)
